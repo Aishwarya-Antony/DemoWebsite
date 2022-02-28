@@ -35,19 +35,34 @@
 
 /* CUSTOM RESETS
 ================================================== */
-body {
+/* body {
     background: #ffffff;
     width: 100%;
     height: 100%;
     justify-content: center;   
     display: flex;  
     margin-bottom: 0;   
-}
-html {
+} */
+/* html {
     width: 100%;
     height: 100%;      
     display: flex; 
+} */
+@font-face {
+    font-family: "Impact";
+    src: url("assets/fonts/impact.ttf") format("truetype");
 }
+
+@font-face {
+    font-family: "Impacted";
+    src: url("assets/fonts/Impacted.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Unicode-Impact";
+    src: url("assets/fonts/unicode.impact.ttf") format("truetype");
+}
+
 a {
     transition: all 0.25s ease-in-out;
     -moz-transition: all 0.25s ease-in-out;
@@ -64,48 +79,8 @@ a:hover {
     outline: 0 none;
     text-decoration: none;
 }
-
-p {
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 300;
-    color: #9fa3a7;
-    line-height: 22px;
-}
-
-h1 {
-    font-size: 62px;
-}
-
-h2 {
-    font-size: 42px;
-}
-
-h1,h2,h3,h4,h5 {
-    color: #26292c;
-}
-
-p + p {
-    margin-top: 40px;
-}
-
 /* Buttons */
-.btn {
-    line-height: 50px;
-    min-width: 200px;
-    font-size: 16px;
-    font-weight: 300;
-    border: 0;
-    border-radius: 50px;
-    color: #26272d;
-    background-color: #fff;
-    padding: 0;
-    transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
-    -moz-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
-    -webkit-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
-    -o-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
-    -ms-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
-}
+
 
 .body-container-getintouch {
     background-color: #FEF0EF;
@@ -114,19 +89,23 @@ p + p {
     display: flex;      
     align-items: center;   
     flex-direction: column; 
-    position: relative;
-      
+    position: relative;      
 }
+
 /* CUSTOM RESETS
 ================================================== */
 
 .body-container {
     background: #ffffff 0% 0% no-repeat padding-box;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     padding: 0% 10%;
 }
-
+@media (max-width:550px) {
+    .body-container {
+        padding: 0% 0%;
+    }
+}
 .row-div {
     display: flex;
     align-items: center;
@@ -146,15 +125,29 @@ p + p {
     margin-bottom: 0px;
 }
 
-.nav-link:hover {
-    color: #000000;
-    font-weight: 900;
-}
-
 .navbar {
     display: flex;
     list-style-type: none;
-    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+@media (max-width:1275px) {
+    .navbar {
+        display: none;
+    }
+}
+
+.nav-item {
+    padding: 0px 10px;
+}
+
+.nav-item-selected {
+    padding: 0px 10px;
+    height: 92px;
+    border-bottom: 5px solid #F56961;
+    border-radius: 5px;
+    align-items: center;
+    display: flex;
 }
 
 .nav-btn {
@@ -180,9 +173,9 @@ p + p {
 ================================================== */
 
 .site-header {
-    margin: 0px 10%;
+    margin: 0px 5%;
     margin-top: 5px;
-    width: 80%;
+    width: 90%;
     height: 85px;
     box-shadow: inset 0px 3px 6px #00000029, 0px 3px 6px #0000000D;
     opacity: 1;
@@ -194,14 +187,30 @@ p + p {
     border-radius: 10px;
     padding: 0px 10px;
 }
+.main-container {  
+    flex: 1;
+    height: 100%;      
+    align-items: center;
+    background: #FEF0EF 0% 0% no-repeat padding-box;
+    position: relative;  
+    flex-direction: column;
+    overflow-x: hidden;    
+}
+.footer {
+    background: #282834;     
+    height: 100px;
+    width: 100%;  
+}
+
 .nav-link {
-    font-size: 10px;
+    font: bold 12px Arial;
     letter-spacing: 0px;
     color: #938AA5;
 }
 .nav-link:hover {
     color: #000000;
     font-weight: 900;
+    text-decoration: none;
 }
 .contact-heading {
     margin: 15px 0;
@@ -214,10 +223,11 @@ p + p {
     text-align: center;
     color: #242E6C;
     font-size: 12px;
+    font-family: Unicode-Impact;
 }
 .bottom-image-curves {
    position: absolute; 
-   bottom: -30px;
+   bottom: 0;
    left: 0;
 } 
 .row {
@@ -225,31 +235,31 @@ p + p {
     flex-direction: row;
     justify-content: center;      
 }
-.col-sm-8 {
-    display: flex;
-    align-items: center;     
+.second-card {
+     display: flex; 
+    /* align-items: center;  */
     border: 2px solid #F29098;
-    border-radius: 10px;
+    /* border-radius: 10px;
     height: 390px; 
     margin-left: 10px; 
     flex-direction:column;  
     padding: 20px;
-    position: relative;
+    position: relative; */
 }
-.col-sm-4 {
+.first-card {
     background-image: url("../img/svg/contactCard.svg");        /* Background image is centered vertically and horizontally at all times */
-    width: 300px;          
+    /* width: 100%;           */
     height: 390px;
-    /* background-color: red; */
-    background-repeat: no-repeat;
-    background-position:center center;   
-    background-size: 500px 600px;
+    background-color: red;
+    /* background-repeat: repeat;
+    background-position:bottom; 
+    background-size: contain;
     border-radius: 10px;
     margin-bottom: 30px;
     padding: 20px;     
-    opacity: 1; 
-    flex: 1;
-    position: relative;
+    opacity: 1;    
+    position: relative; */
+   
 }
 .contact-card-text {    
     color: #ffffff;
@@ -271,14 +281,13 @@ p + p {
 }
 .contact-row-bottom {
     position:absolute;
-    bottom: 10px;
+    bottom: 80px;
 }
-td {
+.form-label {
     color: #000000;
     font-size: 13px;
     font-weight: 700;
-    padding-top: .5em;
-    padding-bottom: .5em;
+    padding-top: 1em;   
 }
 tr {
     padding-right: .5em;
@@ -289,10 +298,35 @@ input {
     width: 100%;
     padding: 6px;        
 }
-.button {
+.buttons {
     position: absolute;
     right: 20px;
     bottom: 10px;
+}
+.button {
+    background: #F56961 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    font: bold 14px Arial;
+    letter-spacing: 0px;
+    color: "#ffffff";
+    text-decoration: none;
+    width: fit-content;
+    padding: 15px 20px;
+    display: flex;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.button:hover {
+    background: #F56961 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    font: bold 14px Arial;
+    letter-spacing: 0px;
+    color: "#ffffff";
+    text-decoration: none;
+    width: fit-content;
+    padding: 15px 20px;
+    display: flex;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
 .sendButton {
     padding: 10px 20px;
@@ -306,4 +340,9 @@ input {
     background-color: #F66C71;
     outline: 0 none;
     text-decoration: none;
+}
+@media (min-width:1275px) {
+    .dropdown {
+        display: none;
+    }
 }
