@@ -47,7 +47,23 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link href="assets/css/homeStyle.css" rel="stylesheet"> -->
-
+    <script src="https://smtpjs.com/v3/smtp.js"></script>  
+	<script type="text/javascript">
+		function sendEmail() {
+			Email.send({
+				Host: "smtp.gmail.com",
+				Username : "mymamoru18@gmail.com",
+				Password : "Mam0ru123",
+				To : 'aldenakshitha@gmail.com',
+				From : "mymamoru18@gmail.com",
+				Subject : "Test Mail",
+                Body : "Test Mail Body",
+			})
+			.then(function(message){
+                console.log("mail sent successfully==="+message)				
+			});
+		}
+	</script>
 </head>
 
 <body>
@@ -104,12 +120,12 @@
             </section><!-- /.section-features -->
             <div class="container" style="flex: 1; align-items: center; width:100%">
                 <div class="row">
-                    <div class="col-lg-4 col-sm-6 col-md-4">
+                    <div class="col-lg-3 col-sm-6 col-md-4" style="width: 320px;">
                         <!-- Card -->
                         <div class="bg-image card"
                             style="display: flex;justify-content: center; margin-left: 40px; background-color: transparent; border: none;">
                             <div
-                                style="display: flex; align-self: center; justify-content: center; border-radius: 10px; background-image: url('./assets/img/svg/contactCard.svg'); height: 450px; width: 350px; background-position: center center; background-size: cover; background-repeat: no-repeat; ">
+                                style="display: flex; align-self: center; justify-content: center; border-radius: 10px; background-image: url('./assets/img/svg/contactCard.svg'); height: 500px; width: 350px; background-position: center center; background-size: cover; background-repeat: no-repeat; ">
                                 <div class="card-body text-white">
                                     <div style="margin: 20px;">
                                         <p class="contact-card-text">Contact information</p>
@@ -117,17 +133,26 @@
                                             <div class="contact-row">
                                                 <img src="./assets/img/svg/call.svg" width="20" height="20"
                                                     alt="call" />
-                                                <p class="contact-row-text">Phone Number</p>
+                                                <p class="contact-row-text">+91 44-43335 154</p>
+                                            </div>
+                                            <div class="contact-row">
+                                                <img src="./assets/img/svg/phone.svg" width="25" height="25"
+                                                    alt="phone" />
+                                                <p style="margin-left: 10px;">+91 99402 18829</p>
                                             </div>
                                             <div class="contact-row">
                                                 <img src="./assets/img/svg/mail.svg" width="20" height="20"
                                                     alt="mail" />
-                                                <p class="contact-row-text">Mail ID</p>
+                                                <p class="contact-row-text">inquiries@kenlasystems.com</p>
                                             </div>
                                             <div class="contact-row">
                                                 <img src="./assets/img/svg/mail.svg" width="20" height="20"
                                                     alt="Address" />
-                                                <p class="contact-row-text">Address</p>
+                                                <div>
+                                                    <p class="contact-row-text">No 3/2 New No 7,</p>
+                                                    <p class="contact-row-text">Kamaraj Avenue 1st Street,</p>
+                                                    <p class="contact-row-text">Adyar, Chennai - 600 020</p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="contact-row-bottom">
@@ -144,10 +169,10 @@
                         <!-- Card -->
                     </div>
 
-                    <div class="col-lg-6 col-xs-12 col-sm-12 col-md-12">
+                    <div class="col-lg-7 col-xs-12 col-sm-12 col-md-12" style="width: 700px;">
                         <!-- Card -->
                         <div class="bg-image card"
-                            style="border-radius: 10px; opacity: 0.9; background-color: white; border: 2px solid #F29098; height: 390px; padding-bottom: 20px; position: relative;">
+                            style="border-radius: 10px;display: flex; opacity: 0.9; background-color: white; border: 2px solid #F29098; height: 425px; padding-bottom: 20px; position: relative;">
                             <div class="card-body" style="display: flex;">
                                 <div class="container">
                                     <div class="row">
@@ -175,12 +200,13 @@
                                         </div>
                                         <div class="col-12">
                                             <p class="form-label">Message</p>
-                                            <input type="text" placeholder="Message..." />
+                                            <textarea id="w3review" name="w3review" rows="4">
+                                            </textarea>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="buttons">
-                                    <button type="button" class="sendButton">Send Message</button>
+                                    <button type="button" class="sendButton" onclick="sendEmail()">Send Message</button>
                                 </div>
                             </div>
                         </div>

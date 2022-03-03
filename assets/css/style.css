@@ -187,15 +187,6 @@ a:hover {
     border-radius: 10px;
     padding: 0px 10px;
 }
-.main-container {  
-    flex: 1;
-    height: 100%;      
-    align-items: center;
-    background: #FEF0EF 0% 0% no-repeat padding-box;
-    position: relative;  
-    flex-direction: column;
-    overflow-x: hidden;    
-}
 .footer {
     background: #282834;     
     height: 100px;
@@ -213,7 +204,7 @@ a:hover {
     text-decoration: none;
 }
 .contact-heading {
-    margin: 15px 0;
+    margin: 20px 0;
 }
 .contact-heading-text {
     text-align: center;
@@ -225,10 +216,20 @@ a:hover {
     font-size: 12px;
     font-family: Unicode-Impact;
 }
+.main-container {  
+    display: flex;
+    flex: 1;
+    height: 100%;      
+    align-items: center;
+    background: #FEF0EF 0% 0% no-repeat padding-box;
+    position: relative;  
+    flex-direction: column;
+    overflow: hidden;      
+}
 .bottom-image-curves {
    position: absolute; 
-   bottom: 0;
-   left: 0;
+   bottom: -32px; 
+   left: 0;   
 } 
 .row {
     display: flex;
@@ -272,7 +273,7 @@ a:hover {
 .contact-row {
     display: flex;
     flex-direction: row;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 .contact-row-text {
     color: #ffffff;
@@ -281,7 +282,7 @@ a:hover {
 }
 .contact-row-bottom {
     position:absolute;
-    bottom: 80px;
+    bottom: 100px;
 }
 .form-label {
     color: #000000;
@@ -298,6 +299,15 @@ input {
     width: 100%;
     padding: 6px;        
 }
+textarea {
+    resize: none;
+    border: 1px solid #D6D2D2;
+    border-radius: 7px;    
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 30px;
+    text-align: left;
+ }
 .buttons {
     position: absolute;
     right: 20px;
@@ -311,7 +321,7 @@ input {
     color: "#ffffff";
     text-decoration: none;
     width: fit-content;
-    padding: 15px 20px;
+    padding: 15px 0;
     display: flex;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
@@ -329,9 +339,9 @@ input {
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
 .sendButton {
-    padding: 10px 20px;
+    padding: 10px;
     background-color: #F29098;
-    border-radius: 10px;
+    border-radius: 7px;
     color: #ffffff;
     font-size: 13px;
     border:none;    
