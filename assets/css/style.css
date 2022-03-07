@@ -287,8 +287,7 @@ a:hover {
 .form-label {
     color: #000000;
     font-size: 13px;
-    font-weight: 700;
-    padding-top: 1em;   
+    font-weight: 700;      
 }
 tr {
     padding-right: .5em;
@@ -303,10 +302,10 @@ textarea {
     resize: none;
     border: 1px solid #D6D2D2;
     border-radius: 7px;    
-    width: 100%;
-    padding: 6px;
+    width: 100%;    
     margin-bottom: 30px;
     text-align: left;
+    padding: 6px
  }
 .buttons {
     position: absolute;
@@ -355,4 +354,9 @@ textarea {
     .dropdown {
         display: none;
     }
+}
+.error{
+    font-size: 12px;
+    color: red;
+    margin-top: 10;
 }

@@ -47,23 +47,71 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link href="assets/css/homeStyle.css" rel="stylesheet"> -->
-    <script src="https://smtpjs.com/v3/smtp.js"></script>  
-	<script type="text/javascript">
-		function sendEmail() {
-			Email.send({
-				Host: "smtp.gmail.com",
-				Username : "mymamoru18@gmail.com",
-				Password : "Mam0ru123",
-				To : 'aldenakshitha@gmail.com',
-				From : "mymamoru18@gmail.com",
-				Subject : "Test Mail",
-                Body : "Test Mail Body",
-			})
-			.then(function(message){
-                console.log("mail sent successfully==="+message)				
-			});
-		}
-	</script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script type="text/javascript">
+        function sendEmail() {
+            var firstName = document.getElementById("fname").value
+            var lastName = document.getElementById("lname").value
+            var mail = document.getElementById("mail").value
+            var phone = document.getElementById("phone").value
+            var requirement = document.getElementById("requirement").value
+            var message = document.getElementById("message").value
+            console.log("message======" + message === "")
+            var isError = false;
+
+            if (firstName === "" || firstName === null) {
+                document.getElementById("fname_error").innerHTML = "First name cannot be empty."
+                isError = true
+            }
+            if (lastName === "" || lastName === null) {
+                document.getElementById("lname_error").innerHTML = "Last name cannot be empty."
+                isError = true
+            }
+            if (mail === "" || mail === null) {
+                document.getElementById("mail_error").innerHTML = "Mail ID cannot be empty."
+                isError = true
+            }
+            if (phone === "" || phone === null) {
+                document.getElementById("phone_error").innerHTML = "Phone cannot be empty."
+                isError = true
+            }
+            if (requirement === "" || requirement === null) {
+                document.getElementById("requirement_error").innerHTML = "Requirement cannot be empty."
+                isError = true
+            }
+            if (message === "" || message === null) {
+                document.getElementById("message_error").innerHTML = "Message cannot be empty."
+                isError = true
+            }
+            if (isError === false) {
+                var body = "First Name : " + firstName + "<br/>" +
+                    "Last Name : " + lastName + "<br/>" +
+                    "Mail ID : " + mail + "<br/>" +
+                    "Phone Number : " + phone + "<br/>" +
+                    "Requirement : " + requirement + "<br/>" +
+                    "Message : " + message
+
+                console.log(body)
+                Email.send({
+                    Host: "smtp.gmail.com",
+                    Username: "aishu97.svr@gmail.com",
+                    Password: "pccogafzkicbfoqa",
+                    To: 'aldenakshitha@gmail.com',
+                    From: "aishu97.svr@gmail.com",
+                    Subject: `Mail from ${firstName} ${lastName}`,
+                    Body: body
+                })
+                    .then(function (message) {
+                        alert("mail sent successfully====" + message)
+                    });
+            }
+        }
+        function removeWarning(id) {
+            console.log("remove======" + `${id}_error`)
+            document.getElementById(`${id}_error`).innerHTML = ""
+        }       
+    </script>
 </head>
 
 <body>
@@ -172,36 +220,48 @@
                     <div class="col-lg-7 col-xs-12 col-sm-12 col-md-12" style="width: 700px;">
                         <!-- Card -->
                         <div class="bg-image card"
-                            style="border-radius: 10px;display: flex; opacity: 0.9; background-color: white; border: 2px solid #F29098; height: 425px; padding-bottom: 20px; position: relative;">
+                            style="border-radius: 10px; display: flex; opacity: 0.9;  background-color: white; border: 2px solid #F29098; padding-bottom: 20px; position: relative;">
                             <div class="card-body" style="display: flex;">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-6" style="padding-top: 1em; ">
                                             <p class="form-label">First Name</p>
-                                            <input type="text" placeholder="First name..." />
+                                            <input type="text" id="fname" placeholder="First name..."
+                                                onkeyup="removeWarning(this.id)" />
+                                            <p class="error" id="fname_error"></p>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-6" style="padding-top: 1em; ">
                                             <p class="form-label">Last Name</p>
-                                            <input type="text" placeholder="Last name..." />
+                                            <input type="text" id="lname" placeholder="Last name..."
+                                                onkeyup="removeWarning(this.id)" />
+                                            <p class="error" id="lname_error"></p>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-6" style="padding-top: 1em; ">
                                             <p class="form-label">Mail ID</p>
-                                            <input type="text" placeholder="Mail ID..." />
+                                            <input type="text" id="mail" placeholder="Mail ID..."
+                                                onkeyup="removeWarning(this.id)" />
+                                            <p class="error" id="mail_error"></p>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-6" style="padding-top: 1em; ">
                                             <p class="form-label">Phone</p>
-                                            <input type="text" placeholder="Phone..." />
+                                            <input type="text" id="phone" placeholder="Phone..."
+                                                onkeyup="removeWarning(this.id)" />
+                                            <p class="error" id="phone_error"></p>
                                         </div>
-                                        <p class="form-label">What Services do you need us to provide you?</p>
+                                        <p class="form-label" style="padding-top: 1em; ">What Services do you need us to
+                                            provide you?</p>
                                         <div class="col-6">
-                                            <input type="text" placeholder="Requirement..." />
+                                            <input type="text" id="requirement" placeholder="Requirement..."
+                                                onkeyup="removeWarning(this.id)" />
+                                            <p class="error" id="requirement_error"></p>
                                         </div>
                                         <div class="col-6">
                                         </div>
-                                        <div class="col-12">
+                                        <div class="col-12" style="padding-top: 1em; margin-bottom: 10px;">
                                             <p class="form-label">Message</p>
-                                            <textarea id="w3review" name="w3review" rows="4">
-                                            </textarea>
+                                            <textarea id="message" rows="3" placeholder="Message..."
+                                                onkeyup="removeWarning(this.id)"></textarea>
+                                            <p class="error" id="message_error"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -218,4 +278,5 @@
         <div class="footer">
         </div>
 </body>
+
 </html>

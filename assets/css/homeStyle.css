@@ -13,6 +13,16 @@
     src: url("assets/fonts/unicode.impact.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Arial-Rounded-MT";
+    src: url("../fonts/Arial-Rounded-MT.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Arial-Rounded-MT-Bold";
+    src: url("../fonts/Arial-Rounded-MT-Bold.ttf") format("truetype");
+}
+
 
 /* CUSTOM RESETS
 ================================================== */
@@ -199,7 +209,7 @@
 }
 
 .how-text-style {
-    font: bold 30px Arial Rounded MT;
+    font:  25px Arial-Rounded-MT-Bold;
 }
 
 .body-text-style {
@@ -311,6 +321,10 @@
     background: #E5E8FB 0% 0% no-repeat padding-box;
 }
 
+.technology-body-div {
+    background: #FEF0EF 0% 0% no-repeat padding-box;
+}
+
 .card-div {
     background: #BEC2F2 0% 0% no-repeat padding-box;
     box-shadow: 0px 5px 10px #00000029;
@@ -367,3 +381,8 @@
         margin: 0px;
     }
 }
+.bottom-image-curves {
+    position: absolute; 
+    bottom: -32px; 
+    left: 0;   
+ } 
