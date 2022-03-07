@@ -47,8 +47,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link href="assets/css/homeStyle.css" rel="stylesheet"> -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
+
     <script type="text/javascript">
         function sendEmail() {
             var firstName = document.getElementById("fname").value
@@ -72,8 +75,16 @@
                 document.getElementById("mail_error").innerHTML = "Mail ID cannot be empty."
                 isError = true
             }
+            else if (!this.validateEmail(mail)) {
+                document.getElementById("mail_error").innerHTML = "Please enter valid email."
+                isError = true
+            }
             if (phone === "" || phone === null) {
                 document.getElementById("phone_error").innerHTML = "Phone cannot be empty."
+                isError = true
+            }
+            else if (phone.length < 10) {
+                document.getElementById("phone_error").innerHTML = "Please enter valid phone number."
                 isError = true
             }
             if (requirement === "" || requirement === null) {
@@ -85,6 +96,9 @@
                 isError = true
             }
             if (isError === false) {
+                var btn = document.getElementById('toastbtn')
+                btn.classList.add('spin');
+                btn.disabled = true;
                 var body = "First Name : " + firstName + "<br/>" +
                     "Last Name : " + lastName + "<br/>" +
                     "Mail ID : " + mail + "<br/>" +
@@ -103,9 +117,31 @@
                     Body: body
                 })
                     .then(function (message) {
-                        alert("mail sent successfully====" + message)
+                        console.log("mail sent======>" + message)
+                        console.log("toast clicked")
+                        btn.classList.remove('spin');
+                        btn.disabled = false;
+                        var x = document.getElementById("snackbar");
+                        x.className = "show";
+                        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+                        document.getElementById("fname").value = ""
+                        document.getElementById("lname").value = ""
+                        document.getElementById("mail").value = ""
+                        document.getElementById("phone").value = ""
+                        document.getElementById("requirement").value = ""
+                        document.getElementById("message").value = ""
                     });
+
             }
+        }
+        /**
+     * Checks email if valid or not
+     * @param {string} email - email given by user
+     * @returns {boolean} true or false
+     */
+        function validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
         }
         function removeWarning(id) {
             console.log("remove======" + `${id}_error`)
@@ -266,7 +302,8 @@
                                     </div>
                                 </div>
                                 <div class="buttons">
-                                    <button type="button" class="sendButton" onclick="sendEmail()">Send Message</button>
+                                    <button type="button" class="sendButton" id="toastbtn" onclick="sendEmail()">Send
+                                        Message<span class="spinner"></span></button>
                                 </div>
                             </div>
                         </div>
@@ -274,6 +311,7 @@
                     <!-- Card -->
                 </div>
             </div>
+            <div id="snackbar">Your request sent succesfully!</div>
         </main>
         <div class="footer">
         </div>

@@ -337,17 +337,24 @@ textarea {
     display: flex;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
-.sendButton {
-    padding: 10px;
-    background-color: #F29098;
-    border-radius: 7px;
-    color: #ffffff;
-    font-size: 13px;
-    border:none;    
-}
-.sendButton:hover {
+.sendButton {   
     background-color: #F66C71;
-    outline: 0 none;
+    display: block;
+  margin: 0 auto;
+  padding: .6em .8em;
+   /* Font-size is the root value that determines size of spinner parts. Change this to whatever you want and spinner elements will size to match. */
+  font-size: 15px;  
+  border-radius: .4em;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: all 1s;
+  color: #fff;
+}
+.sendButton:hover, .sendButton:disabled {
+    background-color: #F29098;
+    outline: none;
     text-decoration: none;
 }
 @media (min-width:1275px) {
@@ -360,3 +367,89 @@ textarea {
     color: red;
     margin-top: 10;
 }
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color:#F66C71;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 30px;
+    font-size: 17px;
+  }
+  
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  @-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {top: 30px; opacity: 1;} 
+    to {top: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+  }
+  .spin {
+    padding-left: 2.5em;
+    display: block;
+  }
+  
+  /* position of the spinner when it appears, you might have to change these values */
+  .spin .spinner {
+    left: -.6em;
+    top: .5em;
+    width: 2.5em;
+    display: block;
+    position: absolute;
+  }
+  
+  /* spinner animation */
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* The actual spinner element is a pseudo-element */
+  .spin .spinner::before {
+    content: "";
+    width: 1.5em; /* Size of the spinner */
+    height: 1.5em; /* Change as desired */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: solid .35em #fff; /* Thickness/color of spinner track */
+    border-bottom-color: #555; /* Color of variant spinner piece */
+    animation: .8s linear infinite spinner; /* speed of spinner */
+    transform: translate(-50%, -50%);
+    will-change: transform;
+  }
+  
+  /* optional, but it will affect the size if changed */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
