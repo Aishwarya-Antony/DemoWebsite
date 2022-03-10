@@ -296,7 +296,7 @@ a:hover {
     font-family: BreeSerif-Regular;
 }
 .contact-div {
-    margin: 50px 0 20px 0;
+    margin: 30px 0 20px 0;
 }
 .contact-row {
     display: flex;
@@ -334,7 +334,7 @@ input {
     padding: 6px;          
 }
 .input-style {
-    font-size: 13px;
+    font-size: 14px;
     font-family: Poppins-Regular;
 }
 textarea {
