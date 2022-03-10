@@ -209,7 +209,7 @@
                         <div class="bg-image card"
                             style="display: flex;justify-content: center; margin-left: 40px; background-color: transparent; border: none;">
                             <div
-                                style="display: flex; align-self: center; justify-content: center; border-radius: 10px; background-image: url('./assets/img/svg/contactCard.svg'); height: 500px; width: 350px; background-position: center center; background-size: cover; background-repeat: no-repeat; ">
+                                style="display: flex; align-self: center; justify-content: center; border-radius: 10px; background-image: url('./assets/img/svg/contactCard.svg'); height: 490px; width: 350px; background-position: center center; background-size: cover; background-repeat: no-repeat; ">
                                 <div class="card-body text-white">
                                     <div style="margin: 20px;">
                                         <p class="contact-card-text">Contact information</p>
@@ -222,7 +222,7 @@
                                             <div class="contact-row">
                                                 <img src="./assets/img/svg/phone.svg" width="25" height="25"
                                                     alt="phone" />
-                                                <p style="margin-left: 10px;">+91 99402 18829</p>
+                                                <p class="contact-row-mobile-text">+91 99402 18829</p>
                                             </div>
                                             <div class="contact-row">
                                                 <img src="./assets/img/svg/mail.svg" width="20" height="20"
@@ -262,40 +262,40 @@
                                     <div class="row">
                                         <div class="col-6" style="padding-top: 1em; ">
                                             <p class="form-label">First Name</p>
-                                            <input type="text" id="fname" placeholder="First name..."
-                                                onkeyup="removeWarning(this.id)" />
+                                            <input class="input-style" type="text" id="fname"
+                                                placeholder="First name..." onkeyup="removeWarning(this.id)" />
                                             <p class="error" id="fname_error"></p>
                                         </div>
                                         <div class="col-6" style="padding-top: 1em; ">
                                             <p class="form-label">Last Name</p>
-                                            <input type="text" id="lname" placeholder="Last name..."
+                                            <input class="input-style" type="text" id="lname" placeholder="Last name..."
                                                 onkeyup="removeWarning(this.id)" />
                                             <p class="error" id="lname_error"></p>
                                         </div>
                                         <div class="col-6" style="padding-top: 1em; ">
                                             <p class="form-label">Mail ID</p>
-                                            <input type="text" id="mail" placeholder="Mail ID..."
+                                            <input class="input-style" type="text" id="mail" placeholder="Mail ID..."
                                                 onkeyup="removeWarning(this.id)" />
                                             <p class="error" id="mail_error"></p>
                                         </div>
                                         <div class="col-6" style="padding-top: 1em; ">
                                             <p class="form-label">Phone</p>
-                                            <input type="text" id="phone" placeholder="Phone..."
+                                            <input class="input-style" type="text" id="phone" placeholder="Phone..."
                                                 onkeyup="removeWarning(this.id)" />
                                             <p class="error" id="phone_error"></p>
                                         </div>
                                         <p class="form-label" style="padding-top: 1em; ">What Services do you need us to
                                             provide you?</p>
                                         <div class="col-6">
-                                            <input type="text" id="requirement" placeholder="Requirement..."
-                                                onkeyup="removeWarning(this.id)" />
+                                            <input class="input-style" type="text" id="requirement"
+                                                placeholder="Requirement..." onkeyup="removeWarning(this.id)" />
                                             <p class="error" id="requirement_error"></p>
                                         </div>
                                         <div class="col-6">
                                         </div>
                                         <div class="col-12" style="padding-top: 1em; margin-bottom: 10px;">
                                             <p class="form-label">Message</p>
-                                            <textarea id="message" rows="3" placeholder="Message..."
+                                            <textarea class="input-style" id="message" rows="3" placeholder="Message..."
                                                 onkeyup="removeWarning(this.id)"></textarea>
                                             <p class="error" id="message_error"></p>
                                         </div>

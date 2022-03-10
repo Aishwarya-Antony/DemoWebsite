@@ -62,6 +62,30 @@
     font-family: "Unicode-Impact";
     src: url("assets/fonts/unicode.impact.ttf") format("truetype");
 }
+@font-face {
+    font-family: "BreeSerif-Regular";
+    src: url("../fonts/BreeSerif-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url("../fonts/Poppins-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Poppins-Light";
+    src: url("../fonts/Poppins-Light.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Poppins-Medium";
+    src: url("../fonts/Poppins-Medium.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Poppins-Regular";
+    src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Poppins-SemiBold";
+    src: url("../fonts/Poppins-SemiBold.ttf") format("truetype");
+}
 
 a {
     transition: all 0.25s ease-in-out;
@@ -118,9 +142,9 @@ a:hover {
 }
 
 .nav-logo-text {
-    font-size: 25px;
-    font-family: Impact;
-    letter-spacing: 7px;
+    font-size: 28px;
+    font-family: BreeSerif-Regular;
+    letter-spacing: 1px;
     color: #393643;
     margin-bottom: 0px;
 }
@@ -153,7 +177,8 @@ a:hover {
 .nav-btn {
     background: #F56961 0% 0% no-repeat padding-box;
     border-radius: 20px;
-    font: bold 12px Arial;
+    font-size: 12px;
+    font-family: Poppins-Medium;
     letter-spacing: 0px;
     color: "#ffffff";
     text-decoration: none;
@@ -163,7 +188,8 @@ a:hover {
 .nav-btn:hover {
     background: #F56961 0% 0% no-repeat padding-box;
     border-radius: 20px;
-    font: bold 12px Arial;
+    font-size: 12px;
+    font-family: Poppins-Medium;
     letter-spacing: 0px;
     color: "#ffffff";
     text-decoration: none;
@@ -194,7 +220,8 @@ a:hover {
 }
 
 .nav-link {
-    font: bold 12px Arial;
+    font-size: 12px;
+    font-family: Poppins-Medium ;
     letter-spacing: 0px;
     color: #938AA5;
 }
@@ -209,12 +236,13 @@ a:hover {
 .contact-heading-text {
     text-align: center;
     color: #000000;
+    font-family: BreeSerif-Regular;
 }
 .contact-subheading-text {
     text-align: center;
     color: #242E6C;
     font-size: 12px;
-    font-family: Unicode-Impact;
+    font-family: Poppins-Regular;
 }
 .main-container {  
     display: flex;
@@ -264,8 +292,8 @@ a:hover {
 }
 .contact-card-text {    
     color: #ffffff;
-    font-size: 19px;
-    font-weight:600;
+    font-size: 20px;
+    font-family: BreeSerif-Regular;
 }
 .contact-div {
     margin: 50px 0 20px 0;
@@ -279,6 +307,13 @@ a:hover {
     color: #ffffff;
     font-size: 13px;
     margin-left: 15px;    
+    font-family: Poppins-Regular;
+}
+.contact-row-mobile-text {
+    color: #ffffff;
+    font-size: 13px;
+    margin-left: 10px;    
+    font-family: Poppins-Regular;
 }
 .contact-row-bottom {
     position:absolute;
@@ -287,7 +322,7 @@ a:hover {
 .form-label {
     color: #000000;
     font-size: 13px;
-    font-weight: 700;      
+    font-family: Poppins-SemiBold;
 }
 tr {
     padding-right: .5em;
@@ -296,7 +331,11 @@ input {
     border: 1px solid #D6D2D2;
     border-radius: 7px;    
     width: 100%;
-    padding: 6px;        
+    padding: 6px;          
+}
+.input-style {
+    font-size: 13px;
+    font-family: Poppins-Regular;
 }
 textarea {
     resize: none;
@@ -310,7 +349,7 @@ textarea {
 .buttons {
     position: absolute;
     right: 20px;
-    bottom: 10px;
+    bottom: 10px;   
 }
 .button {
     background: #F56961 0% 0% no-repeat padding-box;
@@ -343,7 +382,7 @@ textarea {
   margin: 0 auto;
   padding: .6em .8em;
    /* Font-size is the root value that determines size of spinner parts. Change this to whatever you want and spinner elements will size to match. */
-  font-size: 15px;  
+  font-size: 14px;  
   border-radius: .4em;
   border: none;
   overflow: hidden;
@@ -351,6 +390,7 @@ textarea {
   position: relative;
   transition: all 1s;
   color: #fff;
+  font-family: Poppins-Regular;
 }
 .sendButton:hover, .sendButton:disabled {
     background-color: #F29098;
@@ -366,6 +406,7 @@ textarea {
     font-size: 12px;
     color: red;
     margin-top: 10;
+    font-family: Poppins-Regular;
 }
 #snackbar {
     visibility: hidden;
