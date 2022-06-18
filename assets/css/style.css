@@ -217,8 +217,11 @@ a:hover {
     background: #282834;     
     height: 100px;
     width: 100%;  
+    padding: 20px 0px; 
 }
-
+.nav-logo-text-color {
+    color: #fff;
+}
 .nav-link {
     font-size: 12px;
     font-family: Poppins-Medium ;
